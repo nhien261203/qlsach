@@ -1,0 +1,39 @@
+﻿<Window x:Class="quanlynhasach.Suasach"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:quanlynhasach"
+        mc:Ignorable="d"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="Cập nhật thông tin sách" Height="400" Width="750">
+    <Grid Background="Aqua">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="updateLinhvuc" HorizontalAlignment="Left" Margin="112,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="228" Height="30" FontSize="15"/>
+        <Label Content="Lĩnh vực :" HorizontalAlignment="Left" Margin="11,244,0,0" VerticalAlignment="Top" Height="38" Width="76" FontSize="16"/>
+        <Button x:Name="btnCapnhat" Style="{StaticResource ButtonFunction}" Background="#FF17D617"  HorizontalAlignment="Left" Margin="319,309,0,0" VerticalAlignment="Top"  Width="102" Height="34" FontSize="14" Grid.ColumnSpan="2" Click="btnCapnhat_Click">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="Check" Style="{StaticResource FuntButtonIcon}" FontSize="14" Height="14" Width="19"/>
+                <TextBlock Text="Cập nhật" />
+            </StackPanel>
+        </Button>
+        <Label Content="Cập nhật thông tin sách" HorizontalAlignment="Left" Margin="180,10,0,0" VerticalAlignment="Top" FontSize="36" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="updateTacgia" HorizontalAlignment="Left" Margin="112,197,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="228" Height="30" FontSize="15"/>
+        <Label Content="Tên tác giả :" HorizontalAlignment="Left" Margin="11,193,0,0" VerticalAlignment="Top" Height="38" Width="96" FontSize="16"/>
+        <TextBox x:Name="updateTensach" HorizontalAlignment="Left" Margin="112,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="228" Height="30" FontSize="15"/>
+        <Label Content="Tên sách :" HorizontalAlignment="Left" Margin="11,138,0,0" VerticalAlignment="Top" Height="38" Width="76" FontSize="16"/>
+        <TextBox x:Name="updateMaSach" HorizontalAlignment="Left" Margin="112,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="228" Height="30" FontSize="15"/>
+        <Label Content="Mã sách :" HorizontalAlignment="Left" Margin="11,80,0,0" VerticalAlignment="Top" Height="38" Width="76" FontSize="16"/>
+        <TextBox x:Name="updateSoluong" HorizontalAlignment="Left" Margin="111,244,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="228" Height="30" FontSize="15" Grid.Column="1"/>
+        <Label Content="Số lượng :" HorizontalAlignment="Left" Margin="10,240,0,0" VerticalAlignment="Top" Height="38" Width="101" FontSize="16" Grid.Column="1"/>
+        <TextBox x:Name="updateGiaban" HorizontalAlignment="Left" Margin="111,193,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="228" Height="30" FontSize="15" Grid.Column="1"/>
+        <Label Content="Giá bán :" HorizontalAlignment="Left" Margin="10,189,0,0" VerticalAlignment="Top" Height="38" Width="96" FontSize="16" Grid.Column="1"/>
+        <TextBox x:Name="updateGianhap" HorizontalAlignment="Left" Margin="111,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="228" Height="30" FontSize="15" Grid.Column="1"/>
+        <Label Content="Giá nhập :" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Height="38" Width="96" FontSize="16" Grid.Column="1"/>
+        <TextBox x:Name="updateLoaisach" HorizontalAlignment="Left" Margin="111,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="228" Height="30" FontSize="15" Grid.Column="1"/>
+        <Label Content="Loại sách :" HorizontalAlignment="Left" Margin="10,76,0,0" VerticalAlignment="Top" Height="38" Width="96" FontSize="16" Grid.Column="1"/>
+    </Grid>
+</Window>

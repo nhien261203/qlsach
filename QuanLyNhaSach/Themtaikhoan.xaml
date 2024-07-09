@@ -1,0 +1,41 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:local="clr-namespace:quanlynhasach"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="quanlynhasach.Themtaikhoan"
+        mc:Ignorable="d"
+        Title="ThemTaiKhoan" Height="450" Width="400">
+    <Grid Background="Aqua">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Button x:Name="btnThem" Style="{StaticResource ButtonFunction}" Background="#FF17D617"  HorizontalAlignment="Left" Margin="129,323,0,0" VerticalAlignment="Top"  Width="142" Height="37" FontSize="14"  Grid.ColumnSpan="2" 
+            Click="btnThem_Click">
+            <StackPanel Orientation="Horizontal" RenderTransformOrigin="0.713,2.187">
+                <Icon:PackIconMaterial Kind="PlusCircle" Style="{StaticResource FuntButtonIcon}" FontSize="14" Height="14" Width="19" RenderTransformOrigin="-2.043,1.808"/>
+                <TextBlock Text="Thêm tài khoản" />
+            </StackPanel>
+        </Button>
+        <Label Content="Nhập thông tin tài khoản" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="33" Grid.ColumnSpan="2" Width="400" Margin="11,10,0,0"/>
+        <!--Tai khoan-->
+        <TextBox x:Name="addTenTaiKhoan" Margin="144,92,28,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="30" FontSize="15" Grid.ColumnSpan="2" Background="#FFF3F3F3"/>
+        <Label Content="Tên tài khoản :" HorizontalAlignment="Left" Margin="11,88,0,0" VerticalAlignment="Top" Height="38" Width="116" FontSize="16"/>
+        <!--Nguoi dung-->
+        <TextBox x:Name="addTenNguoiDung" Margin="144,142,28,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="30" FontSize="15" Grid.ColumnSpan="2" Background="#FFF3F3F3"/>
+        <Label Content="Tên người dùng :" HorizontalAlignment="Left" Margin="11,138,0,0" VerticalAlignment="Top" Height="38" Width="128" FontSize="16"/>
+        <!--Mat khau-->
+        <TextBox x:Name="addMatKhau" Margin="144,197,28,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="30" FontSize="15" Grid.ColumnSpan="2" Background="#FFF3F3F3"/>
+        <Label Content="Mật khẩu :" HorizontalAlignment="Left" Margin="11,193,0,0" VerticalAlignment="Top" Height="38" Width="116" FontSize="16"/>
+        <ComboBox x:Name="addPhanQuyen" Margin="144,248,28,0"  Text="" VerticalAlignment="Top" 
+                  Height="30" FontSize="15" Grid.ColumnSpan="2" Background="White">
+            <ComboBoxItem Content="admin"/>
+            <ComboBoxItem Content="user"/>
+        </ComboBox>
+        <Label Content="Phân quyền :" HorizontalAlignment="Left" Margin="11,244,0,0" VerticalAlignment="Top" Height="38" Width="116" FontSize="16"/>
+    </Grid>
+</Window>

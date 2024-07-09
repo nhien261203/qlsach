@@ -1,0 +1,35 @@
+﻿<Window x:Class="quanlynhasach.Chitiethoadon"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:quanlynhasach"
+        mc:Ignorable="d"
+        Title="Chi Tiết Hóa Đơn" Height="400" Width="900">
+    <Grid Background="Aqua" Height="984" VerticalAlignment="Center" HorizontalAlignment="Left" Width="1100">
+        <Label Content="Chi tiết hóa đơn" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Height="51" Margin="330,322,0,0" Width="274"/>
+        <DataGrid x:Name="dgChiTietHD" HorizontalAlignment="Left" Margin="58,472,0,0" VerticalAlignment="Top" Width="772" FontSize="16" AutoGenerateColumns="False" Height="185" RenderTransformOrigin="0.5,0.5" IsReadOnly="True" >
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.053"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.457"/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã hóa đơn" Binding="{Binding MAHOADON}" Width="100"/>
+                <DataGridTextColumn Header="Mã sản phẩm" Binding="{Binding MASANPHAM }" Width="110"/>
+                <DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding TENSANPHAM}" Width="250"/>
+                <DataGridTextColumn Header="SL" Binding="{Binding SOLUONGSP}" Width="50"/>
+                <DataGridTextColumn Header="Đơn Giá" Binding="{Binding GIABAN}" Width="110"/>
+                <DataGridTextColumn Header="Thành Tiền" Binding="{Binding THANHTIEN}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Nhân viên lập hóa đơn :" HorizontalAlignment="Left" Margin="59,389,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Tên khách hàng :" HorizontalAlignment="Left" Margin="59,431,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Name="nhanvien" HorizontalAlignment="Left" Margin="267,389,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Name="tenkhachhang" HorizontalAlignment="Left" Margin="207,431,0,0" VerticalAlignment="Top" FontSize="18"/>
+    </Grid>
+</Window>
+

@@ -1,0 +1,72 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:quanlynhasach"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks" x:Class="quanlynhasach.Themhoadon"
+        mc:Ignorable="d"
+        Title="Themhoadon" Height="800" Width="800">
+    <Grid Background="Aqua" Height="940" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="800" Margin="0,0,0,-56">
+        <Label Content="Thêm hóa đơn" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="23,118,0,0"/>
+        <Label Content="Mã hóa đơn :" HorizontalAlignment="Left" Margin="17,182,0,0" VerticalAlignment="Top" FontSize="16" Height="30" />
+        <TextBox x:Name="txtMahoadon" HorizontalAlignment="Left" Margin="150,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="24" FontSize="16" IsReadOnly="True"/>
+        <Label Content="Tên khách hàng :" HorizontalAlignment="Left" Margin="365,180,0,0" VerticalAlignment="Top" FontSize="16" Height="32"/>
+        <TextBox x:Name="txtTenkhachhang" HorizontalAlignment="Left" Margin="497,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" Height="24" FontSize="16"/>
+        <Label Content="Người lập HĐ :" HorizontalAlignment="Left" Margin="18,226,0,0" VerticalAlignment="Top" FontSize="16" Height="34"/>
+        <TextBox x:Name="txtNguoilapHD" HorizontalAlignment="Left" Margin="150,230,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" Height="24" FontSize="16" IsReadOnly="True"/>
+        <DataGrid x:Name="dgAddSachvaSanPham" Margin="20,0,0,420" FontSize="16" SelectionChanged="dgAddSachvaSanPham_SelectionChanged" IsReadOnly="True" HorizontalAlignment="Left" Width="504" Height="170" VerticalAlignment="Bottom"/>
+        <RadioButton x:Name="btnrdSach" HorizontalContentAlignment="Center" Content="Sách" HorizontalAlignment="Left" Margin="21,272,0,0" VerticalAlignment="Top" FontSize="16" VerticalContentAlignment="Center" Checked="btnrdSach_Checked"/>
+        <RadioButton x:Name="btnrdSanpham" HorizontalContentAlignment="Center" Content="Sản phẩm văn phòng" HorizontalAlignment="Left" Margin="85,272,0,0" VerticalAlignment="Top" Width="168" FontSize="16" VerticalContentAlignment="Center" Checked="btnrdSanpham_Checked" />
+        <Border CornerRadius="15" Background="White" Margin="21,0,0,606" Height="36" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="358">
+            <Grid Height="57" VerticalAlignment="Top" Margin="0,-17,0,0">
+                <iconPacks:PackIconMaterial Kind="Magnify" Style="{StaticResource FuntButtonIcon}" Margin="310,16,0,0" Height="34" Width="20" RenderTransformOrigin="0.619,0.5" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtSearchBookorSanpham" Text="Tìm kiếm" Margin="23,23,89,13" FontSize="16" SelectionBrush="#FF049DFF" BorderBrush="{x:Null}" Background="{x:Null}" BorderThickness="0,0,0,0" Foreground="#FF403F3F" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" KeyDown="Enter_keydown"/>
+            </Grid>
+        </Border>
+        <Button x:Name="btnTimkiem" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="397,302,0,0" VerticalAlignment="Top"  Width="93" Height="28" Background="#FF2CA913" Click="btnTimkiem_Click">
+            <StackPanel Orientation="Horizontal">
+                <iconPacks:PackIconMaterial Kind="TextBoxSearch" Style="{StaticResource FuntButtonIcon}" Height="15" Width="16"/>
+                <TextBlock Text="Tìm kiếm" FontSize="14" />
+            </StackPanel>
+        </Button>
+        <DataGrid x:Name="dgChiTiet" HorizontalAlignment="Left" Margin="20,599,0,0" VerticalAlignment="Top" Width="651" FontSize="16" AutoGenerateColumns="False" Height="144" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Mã sản phẩm" Binding="{Binding Ma}" Width="110"/>
+                <DataGridTextColumn Header="Tên sản phẩm" Binding="{Binding Ten}" Width="250"/>
+                <DataGridTextColumn Header="SL" Binding="{Binding Soluong}" Width="50"/>
+                <DataGridTextColumn Header="Đơn Giá" Binding="{Binding Giaban}" Width="110"/>
+                <DataGridTextColumn Header="Thành Tiền" Binding="{Binding Thanhtien}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Nhập số lượng :" HorizontalAlignment="Left" Margin="18,543,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="txtSoluong" HorizontalAlignment="Left" Margin="147,546,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="50" Height="26" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Button x:Name="btnThem" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="234,543,0,0" VerticalAlignment="Top"  Width="77" Height="32" Background="#FF2CA913" Click="btnThem_Click">
+            <StackPanel Orientation="Horizontal">
+                <iconPacks:PackIconMaterial Kind="PlusCircle" Style="{StaticResource FuntButtonIcon}" Height="15" Width="16"/>
+                <TextBlock Text="Thêm" FontSize="14" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnXoa" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="350,543,0,0" VerticalAlignment="Top"  Width="65" Height="32" Background="Red" Click="btnXoa_Click">
+            <StackPanel Orientation="Horizontal">
+                <iconPacks:PackIconMaterial Kind="TrashCan" Style="{StaticResource FuntButtonIcon}" Height="15" Width="16"/>
+                <TextBlock Text="Xóa" FontSize="14" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnHoanthanhhd" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="29,826,0,0" VerticalAlignment="Top"  Width="180" Height="42" Background="#FF2CA913" Click="btnHoanthanhhd_Click">
+            <StackPanel Orientation="Horizontal">
+                <iconPacks:PackIconMaterial Kind="Check" Style="{StaticResource FuntButtonIcon}" Height="15" Width="16"/>
+                <TextBlock Text="Hoàn thành hóa đơn" FontSize="14" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnThoat" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="589,823,0,0" VerticalAlignment="Top"  Width="82" Height="42" Background="#FFE22F2F" Click="btnThoat_Click">
+            <StackPanel Orientation="Horizontal">
+                <iconPacks:PackIconMaterial Kind="ExitToApp" Style="{StaticResource FuntButtonIcon}" Height="15" Width="16"/>
+                <TextBlock Text="Thoát" FontSize="14" />
+            </StackPanel>
+        </Button>
+        <Label Content="Tổng tiền :" HorizontalAlignment="Left" Margin="413,752,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Height="41"/>
+        <TextBox x:Name="Sum" HorizontalAlignment="Left" Margin="537,756,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" FontSize="20"  Height="29" VerticalContentAlignment="Bottom" Text=""/>
+
+    </Grid>
+</Window>

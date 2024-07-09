@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="quanlynhasach.Thongke"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:local="clr-namespace:quanlynhasach"
+             mc:Ignorable="d" 
+             d:DesignHeight="770" d:DesignWidth="980">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="StyleButton" TargetType="{x:Type ButtonBase}">
+            <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+        </ControlTemplate>
+    </UserControl.Resources>
+    <Grid Background="Transparent">
+        <Label Content="Thống kê" 
+            HorizontalAlignment="Left" 
+            Margin="58,42,0,0" 
+            VerticalAlignment="Top" 
+            Width="356" 
+            FontSize="50" Height="84" Foreground="White">
+        </Label>
+        <Grid Margin="0,0,0,578">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="209*"/>
+                <ColumnDefinition Width="281*"/>
+            </Grid.ColumnDefinitions>
+            <!--Tu ngay-->
+            <Label 
+                Content="Từ ngày: " 
+                HorizontalAlignment="Left" 
+                Height="30" 
+                Margin="127,130,0,0" 
+                VerticalAlignment="Top" 
+                Width="70" 
+                FontFamily="14" FontWeight="Bold" FontSize="14" Foreground="White">
+            </Label>
+            <DatePicker 
+                x:Name="DatePickerTuNgay" 
+                HorizontalAlignment="Left"
+                Height="30" 
+                Margin="197,129,0,0" 
+                VerticalAlignment="Top" 
+                Width="211"
+                FontFamily="Times New Roman" 
+                FontSize="14">
+            </DatePicker>
+            <!--Den ngay-->
+            <Label Content="Đến ngày: " HorizontalAlignment="Left" Height="30" Margin="33,129,0,0" VerticalAlignment="Top" Width="87" FontFamily="14" FontWeight="Bold" Grid.Column="1" FontSize="14" Foreground="White"/>
+            <Button x:Name="timkiem" Template="{DynamicResource StyleButton}" Style="{DynamicResource ButtonStyle1}" 
+                Content="Tìm kiếm" 
+                HorizontalAlignment="Left" 
+                Margin="410,125,0,0" 
+                VerticalAlignment="Top"  
+                Width="108" 
+                Height="34" 
+                Background="#FF05E3FF" Foreground="White" FontWeight="Bold" BorderBrush="#FFFDF9F9" Grid.Column="1" Click="timkiem_Click">
+            </Button>
+            <DatePicker x:Name="DatePickerDenNgay" HorizontalAlignment="Left" Height="28" Margin="120,130,0,0" VerticalAlignment="Top" Width="206" FontFamily="Times New Roman" FontSize="14" Grid.Column="1"/>
+
+        </Grid>
+
+        <Grid Margin="58,192,84,139">
+            <DataGrid x:Name="dgThongke" HorizontalAlignment="Center" Height="436" VerticalAlignment="Center" Width="806" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="MÃ HÓA ĐƠN" Binding="{Binding MAHOADON}" Width="150"/>
+                    <DataGridTextColumn Header="TÊN KHÁCH HÀNG" Binding="{Binding TENKHACHHANG}" Width="150"/>
+                    <DataGridTextColumn Header="NGÀY LẬP" Binding="{Binding NGAYLAP}" Width="150"/>
+                    <DataGridTextColumn Header="NHÂN VIÊN LẬP HÓA ĐƠN" Binding="{Binding NHANVIENLAPHD}" Width="200"/>
+                    <DataGridTextColumn Header="TỔNG TIỀN" Binding="{Binding TONGTIEN}" Width="200"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </Grid>
+
+        <Label 
+            Content="Tổng doanh thu: " 
+            HorizontalAlignment="Left" 
+            Height="51" 
+            Margin="519,661,0,0" 
+            VerticalAlignment="Top" 
+            Width="172" 
+             FontWeight="Bold" FontSize="20" Foreground="White">
+        </Label>
+        <Label 
+            Name="tongdoanhthu"
+            Content="" 
+            HorizontalAlignment="Left" 
+            Height="51" 
+            Margin="705,661,0,0" 
+            VerticalAlignment="Top" 
+            Width="172" 
+            FontWeight="Bold" FontSize="20" Foreground="White"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="quanlynhasach.Taikhoan"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:quanlynhasach"
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             d:DesignHeight="770" d:DesignWidth="980">
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Cập Nhật Tài Khoản" HorizontalAlignment="Left" VerticalAlignment="Top" Height="76" Width="546" Margin="24,18,0,0" Foreground="White" FontSize="50"/>
+        <Button x:Name="btnThemtaikhoan" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="24,264,0,0" VerticalAlignment="Top" Width="163" Height="44" Grid.Row="1" Click="btnThemtaikhoan_Click">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="PlusCircle" Style="{StaticResource FuntButtonIcon}"/>
+                <TextBlock Text="Thêm tài khoản" Height="26" Width="126" />
+            </StackPanel>
+        </Button>
+        <DataGrid x:Name="dgTaiKhoan" HorizontalAlignment="Left" Height="231" VerticalAlignment="Top" Width="980" Grid.Row="1" AutoGenerateColumns="False" FontSize="16" SelectionChanged="dgTaiKhoan_SelectionChanged" IsReadOnly="True">
+            <DataGrid.Background>
+                <SolidColorBrush Color="White" Opacity="0.5"/>
+            </DataGrid.Background>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="TÊN TÀI KHOẢN" Binding="{Binding  TENTAIKHOAN}" Width="250"/>
+                <DataGridTextColumn Header="TÊN NGƯỜI DÙNG" Binding="{Binding TENNGUOIDUNG}" Width="250"/>
+                <DataGridTextColumn Header="MẬT KHẨU" Binding="{Binding MATKHAU}" Width="250"/>
+                <DataGridTextColumn Header="PHÂN QUYỀN" Binding="{Binding PHANQUYEN}" Width="250"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Icon:PackIconMaterial Kind="Account" Style="{StaticResource FuntButtonIcon}" Margin="78,330,0,0" VerticalAlignment="Top" Grid.Row="1" Height="24" Width="24" Foreground="White"/>
+        <Icon:PackIconMaterial Kind="Lock" Style="{StaticResource FuntButtonIcon}" Margin="78,389,0,0" VerticalAlignment="Top" Grid.Row="1" Height="24" Width="24"  Foreground="White"/>
+        <Label  Content="Tên đăng nhập" HorizontalAlignment="Left" Margin="121,324,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <Label Content="Mật khẩu hiện tại" HorizontalAlignment="Left" Margin="121,383,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <Label Content="Mật khẩu mới" HorizontalAlignment="Left" Margin="121,436,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
+        <Label Content="Xác nhận mật khẩu mới" HorizontalAlignment="Left" Margin="121,490,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+        <TextBox x:Name="txtTenDangNhap"
+                 Text="{Binding SelectedItem.TENTAIKHOAN, ElementName=dgTaiKhoan}"
+                 HorizontalAlignment="Left" Height="30" Margin="359,331,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" Grid.Row="1" FontSize="16" VerticalContentAlignment="Center" IsReadOnly="True" />
+        <TextBox x:Name="passwMKHienTai" 
+                 Text="{Binding SelectedItem.MATKHAU, ElementName=dgTaiKhoan}"
+                 HorizontalAlignment="Left" Height="30" Margin="359,383,0,0" VerticalAlignment="Top" Width="302" Grid.Row="1" VerticalContentAlignment="Center" FontSize="16"  IsReadOnly="True"/>
+        <PasswordBox x:Name="passwMKMoi" HorizontalAlignment="Left" Height="30" Margin="359,439,0,0" VerticalAlignment="Top" Width="302" Grid.Row="1" FontSize="16" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name="passwNhapLai" HorizontalAlignment="Left" Height="30" Margin="359,497,0,0" VerticalAlignment="Top" Width="302" Grid.Row="1" FontSize="16" VerticalContentAlignment="Center"/>
+        <Button Style="{StaticResource ButtonFunction}" Background="Green"  HorizontalAlignment="Left" Margin="815,493,0,0" VerticalAlignment="Top" Width="116" Height="44" Grid.Row="1" Click="btnCapNhat_Click">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="Check" Style="{StaticResource FuntButtonIcon}"/>
+                <TextBlock Text="Cập nhật" Height="26" Width="85" />
+            </StackPanel>
+        </Button>
+        <Icon:PackIconMaterial Kind="LockPlus" Style="{StaticResource FuntButtonIcon}" Margin="78,442,0,0" VerticalAlignment="Top" Grid.Row="1" Height="24" Width="24"  Foreground="White"/>
+        <Icon:PackIconMaterial Kind="LockCheck" Style="{StaticResource FuntButtonIcon}" Margin="78,497,0,0" VerticalAlignment="Top" Grid.Row="1" Height="24" Width="24"  Foreground="White"/>
+        <Button x:Name="btnXoataikhoan" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="261,264,0,0" VerticalAlignment="Top" Width="75" Height="44" Grid.Row="1" Background="#FFD43319" Click="btnXoataikhoan_Click">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="TrashCan" Style="{StaticResource FuntButtonIcon}"/>
+                <TextBlock Text="Xóa" Height="26" Width="39" />
+            </StackPanel>
+        </Button>
+    </Grid>
+</UserControl>

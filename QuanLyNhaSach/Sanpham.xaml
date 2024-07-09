@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="quanlynhasach.Sanpham"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:quanlynhasach"
+             mc:Ignorable="d" 
+             xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             d:DesignHeight="770" d:DesignWidth="980">
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border CornerRadius="15" Background="White" Margin="706,48,71,69" RenderTransformOrigin="0.421,0.643">
+            <Grid Margin="0,0,-61,0">
+                <Icon:PackIconMaterial Kind="Magnify" Style="{StaticResource FuntButtonIcon}" Margin="170,3,0,0" Height="34" Width="20" RenderTransformOrigin="0.619,0.5" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtSearchSP" Text="Tìm kiếm" VerticalAlignment="Center" Margin="10,0,99,0" FontSize="16" SelectionBrush="#FF049DFF" BorderBrush="{x:Null}" Background="{x:Null}" BorderThickness="0,0,0,0" Foreground="#FF403F3F" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            </Grid>
+        </Border>
+        <Button x:Name="btnTimkiemSP" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="921,48,0,0" VerticalAlignment="Top"  Width="40" Height="36" Background="#FF2CA913" Click="btnTimkiemSP_Click">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="TextBoxSearch" Style="{StaticResource FuntButtonIcon}"/>
+                <TextBlock Text="" />
+            </StackPanel>
+        </Button>
+        <Label Content="Quản lý sản phẩm văn phòng" HorizontalAlignment="Left" VerticalAlignment="Top" Height="76" Width="713" Margin="24,18,0,0" Foreground="White" FontSize="50"/>
+        <Button Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="46,114,0,0" VerticalAlignment="Top"  Width="90" Height="36" Background="#FF19D468" Click="BtnThemsanpham_Click">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="PlusCircle" Style="{StaticResource FuntButtonIcon}"/>
+                <TextBlock Text="Thêm" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="BtnSuasanpham" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="240,114,0,0" VerticalAlignment="Top"  Width="78" Height="36" Background="#FF19D468" Click="BtnSuasanpham_Click">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="Wrench" Style="{StaticResource FuntButtonIcon}"/>
+                <TextBlock Text="Sửa" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="BtnXoaSP" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="428,114,0,0" VerticalAlignment="Top"  Width="81" Height="36" Background="#FF19D468" Click="BtnXoaSP_Click">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="TrashCan" Style="{StaticResource FuntButtonIcon}"/>
+                <TextBlock Text="Xóa" />
+            </StackPanel>
+        </Button>
+        <Button x:Name="btnLammoi" Style="{StaticResource ButtonFunction}"  HorizontalAlignment="Left" Margin="625,114,0,0" VerticalAlignment="Top"  Width="38" Height="36" Background="#FF2CA913" Click="btnLammoiSP_Click">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="Refresh" Style="{StaticResource FuntButtonIcon}"/>
+                <TextBlock />
+            </StackPanel>
+        </Button>
+        <DataGrid x:Name="dgSanpham" Height="436" Margin="0,13,0,0" VerticalAlignment="Top" AutoGenerateColumns="False" Grid.Row="1" HorizontalAlignment="Center" Width="980" IsReadOnly="True" FontSize="18" SelectionChanged="dgSanpham_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="MÃ SẢN PHẨM" Binding="{Binding MASANPHAM}" Width="150">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="18"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="TÊN SẢN PHẨM" Binding="{Binding TENSANPHAM}" Width="250">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="18"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="SỐ LƯỢNG" Binding="{Binding SOLUONG}" Width="200">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="18"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="GIÁ NHẬP ( VNĐ )" Binding="{Binding GIANHAP}" Width="200">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="18"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="GIÁ BÁN ( VNĐ )" Binding="{Binding GIABAN}" Width="200">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="18"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>
